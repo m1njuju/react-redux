@@ -7,11 +7,13 @@ import { combineReducers } from "redux";
 import counter from "./counter";
 import todos from "./todos";
 import counterAsync from "./counterAsync";
+import newsapi from "./newsapi";
 
 const rootReducer = combineReducers({
   counter,
   counterAsync,
   todos,
+  newsapi,
 });
 
 export default rootReducer;
