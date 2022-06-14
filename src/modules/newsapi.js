@@ -7,6 +7,8 @@ const GET_NEWS_FAILURE = "newsapi/GET_NEWS_FAILURE";
 
 // Thunk 미들웨어를 통해 실행
 // 액션 함수 > axios로 받아오기 위해 비동기로 작성
+// id와 같은 값이 필용하다면 감싸준 함수의 매개변수 안에 작성
+// const getNews = (id) => async (dispatch)
 export const getNews = () => async (dispatch) => {
   // 액션타입을 객체로 바로 보내줌
   dispatch({ type: GET_NEWS });
