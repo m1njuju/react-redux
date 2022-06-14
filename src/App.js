@@ -1,4 +1,5 @@
 import "./App.css";
+import CounterAsyncContainer from "./containers/CounterAsyncContainer";
 import CounterContainer from "./containers/CounterContainer";
 import CounterHookContainer from "./containers/CounterHookContainer";
 import TodosContainer from "./containers/TodosContainer";
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <CounterContainer />
       <CounterHookContainer />
+      <CounterAsyncContainer />
       <hr></hr>
       <TodosContainer />
       <TodosHookContainer />

@@ -1,5 +1,6 @@
 // lib: 라이브러리를 모아두는 파일
 // loggerMiddleware: 디스패치가 실행될 때 log를 남기는 미들웨어
+// 미들웨어를 사용하는 이유: 랜덤하게 바뀌는 값, 날짜값, 비동기(axios)를 사용하기 위함
 
 // store: 리덕스에서 가져온 store(state와 dispatch)
 // action: dispatch된 액션
