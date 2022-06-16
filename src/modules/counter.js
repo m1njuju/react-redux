@@ -10,7 +10,9 @@ const INCREASE_DIFF = "counter/INCREASE_DIFF";
 // 액션 함수 : 액션에 들어갈 값이 바뀔 때 쉽게 사용하기 위함
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
-export const setDiff = (diff) => ({ type: SET_DIFF, diff });
+
+// 값을 가져오는 함수는 매개변수 값을 넣어서 작성: (diff) => ({ type: SET_DIFF, payload: diff });
+export const setDiff = (diff) => ({ type: SET_DIFF, payload: diff });
 export const increDiff = () => ({ type: INCREASE_DIFF });
 
 // 초기 상태
@@ -36,7 +38,7 @@ function counter(state = initalState, action) {
     case SET_DIFF:
       return {
         ...state,
-        diff: action.diff,
+        diff: parseInt(action.payload),
       };
     case INCREASE_DIFF:
       return {

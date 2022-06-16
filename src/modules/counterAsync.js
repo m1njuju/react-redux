@@ -14,6 +14,7 @@ export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
 
 // 비동기 함수 > Thunk생성함수: 함수를 한번 감싸서 내보내줌
+// 리액트 미들웨어를 통해 바로 값이 실행되지 않게 막음
 export const increaseAsync = () => (dispatch) => {
   setTimeout(() => {
     dispatch(increase());

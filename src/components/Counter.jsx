@@ -14,7 +14,7 @@ const Counter = ({
   onDiff,
 }) => {
   const onChange = (e) => {
-    onSetDiff(parseInt(e.target.value, 10));
+    onSetDiff(e.target.value);
   };
 
   return (
