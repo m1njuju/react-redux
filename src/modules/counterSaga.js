@@ -20,6 +20,7 @@ export const decreaseAsync = () => ({ type: DECREASE_ASYNC });
 
 // 제너럴 함수 생성
 function* increaseSaga() {
+  //("redux-saga/effects"에서 들고옴)
   yield delay(1000); // 1초 기다림
   yield put(increase()); // put은 액션을 디스패치해 줌
 }
@@ -30,7 +31,9 @@ function* decreaseSaga() {
 
 // 작성해 준 기능이 들어간 제너럴 함수를 어떤 식으로 실행할지 내보내는 함수
 export function* counterSaga() {
+  // takeEvery는 모든 작업 실행
   yield takeEvery(INCREASE_ASYNC, increaseSaga);
+  // takeLatest는 중복되었을 때 마지막 작업만 실행
   yield takeLatest(DECREASE_ASYNC, decreaseSaga);
 }
 

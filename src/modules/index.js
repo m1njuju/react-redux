@@ -10,10 +10,12 @@ import counter from "./counter";
 import todos from "./todos";
 import counterAsync from "./counterAsync";
 import newsapi from "./newsapi";
+
 // 리덕스 사가를 이용한 export를 가져옴
 // default로 export한 경우: {} 없이 들고옴, 이름을 바꿀 수 있음
 // export만 한 경우: {} 를 통해서 동일한 이름으로 들고옴
 import counterSagaReducer, { counterSaga } from "./counterSaga";
+import newsapiSagaReducer, { newsapiSaga } from "./newsapiSaga";
 
 const rootReducer = combineReducers({
   counter,
@@ -21,10 +23,11 @@ const rootReducer = combineReducers({
   todos,
   newsapi,
   counterSagaReducer,
+  newsapiSagaReducer,
 });
 
 export function* rootSaga() {
-  yield all([counterSaga()]);
+  yield all([counterSaga(), newsapiSaga()]);
 }
 
 export default rootReducer;
